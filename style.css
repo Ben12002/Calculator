@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+button {
+    font-size : 20px;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.screen {
+    border: 1px solid darkblue;
+    border-radius: 8px;
+    height: 70px;
+    font-size: 50px;
+    line-height: 70px;
+    text-align: right;
+    padding-right: 10px;
+   
+    
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    grid-template-rows: repeat(4, 50px);
+    grid-gap: 5px 5px;
+}
+
+.operator-button {
+    background-color: rgb(31, 39, 143);
+    color: aliceblue;
+    border-style: solid;
+    border-color: rgb(31, 39, 143);
+    border-radius: 8px;
+}
+
+.activeOperator {
+    background-color: rgb(255, 0, 0);
+    
+}
