@@ -1,7 +1,10 @@
 body {
     font-family: sans-serif;
+    background-color: rgb(143, 143, 143);
     
 }
+
+
 
 button {
     font-size : 20px;
@@ -37,7 +40,7 @@ button {
     text-align: right;
     padding-right: 10px;
     background-color: rgb(112, 139, 119);
-   
+    font-family: 'Azeret Mono', monospace;
     
 }
 
@@ -56,5 +59,9 @@ button {
     border-radius: 8px;
 }
 
-
+.equals-button, .clear-button {
+    background-color: rgb(70, 70, 70);
+    border-color: rgb(255, 255, 255);
+    color: aliceblue;
+}
 

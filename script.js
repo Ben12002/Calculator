@@ -11,18 +11,21 @@ let op = "";  // currently stored operator
 function add(a,b){
     a = parseInt(a);
     b = parseInt(b);
+    // let num = a + b;
     return a + b;
 }
 
 function subtract(a,b){
     a = parseInt(a);
     b = parseInt(b);
+    // let num = a - b;
     return a - b;
 }
 
 function multiply(a,b){
     a = parseInt(a);
     b = parseInt(b);
+    // let num = a * b;
     return a * b;
 }
 
@@ -33,7 +36,7 @@ function divide(a,b){
         alert("do not divide by 0 :)")
         return;
     } 
-    return a / b;
+    return (a/b).toFixed(6);
 }
 
 function operate(operator, a, b){ // operator, a, b are strings
