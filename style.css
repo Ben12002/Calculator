@@ -1,49 +1,60 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: sans-serif;
     
 }
 
 button {
     font-size : 20px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 8px;
+    
 }
 
+.top-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    margin-top: 100px;
+}
 
 .container {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    background-color: rgb(114, 111, 111);
+    padding: 15px;
+    border-radius: 8px;
 }
 
 .screen {
-    border: 1px solid darkblue;
+    border: 1px solid rgb(0, 0, 0);
     border-radius: 8px;
     height: 70px;
     font-size: 50px;
     line-height: 70px;
     text-align: right;
     padding-right: 10px;
+    background-color: rgb(112, 139, 119);
    
     
 }
 
 .keypad {
     display: grid;
-    grid-template-columns: repeat(4, 150px);
+    grid-template-columns: repeat(4, 70px);
     grid-template-rows: repeat(4, 50px);
     grid-gap: 5px 5px;
 }
 
 .operator-button {
-    background-color: rgb(31, 39, 143);
+    background-color: rgb(68, 68, 70);
     color: aliceblue;
     border-style: solid;
-    border-color: rgb(31, 39, 143);
+    border-color: rgb(255, 255, 255);
     border-radius: 8px;
 }
 
-.activeOperator {
-    background-color: rgb(255, 0, 0);
-    
-}
+
+
