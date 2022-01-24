@@ -2,6 +2,7 @@ const numberButtons = document.querySelectorAll(".number-button");
 const operatorButtons = document.querySelectorAll(".operator-button");
 const screen = document.querySelector(".screen");
 const operators = ["+", "-", "*", "/"];
+const maxDisplayDigits = 8;
 
 let displayValue = 0;
 let a = ""; // currently stored 1st operand
@@ -9,49 +10,54 @@ let b = "";  // currently stored 2nd operand
 let op = "";  // currently stored operator
 
 function add(a,b){
-    a = parseInt(a);
-    b = parseInt(b);
-    // let num = a + b;
-    return a + b;
+    let num = a + b;
+    if (isInt(num)) num = num.toFixed(maxDisplayDigits);
+    return num;
 }
 
 function subtract(a,b){
-    a = parseInt(a);
-    b = parseInt(b);
-    // let num = a - b;
-    return a - b;
+    let num = a - b;
+    if (isInt(num)) num = num.toFixed(maxDisplayDigits);
+    return num;
 }
 
 function multiply(a,b){
-    a = parseInt(a);
-    b = parseInt(b);
-    // let num = a * b;
-    return a * b;
+    let num = a * b;
+    if (isInt(num)) num = num.toFixed(maxDisplayDigits);
+    return num;
 }
 
 function divide(a,b){
-    a = parseInt(a);
-    b = parseInt(b);
     if (b === 0){
         alert("do not divide by 0 :)")
         return;
-    } 
-    return (a/b).toFixed(6);
+    }
+    let num = a / b;
+    if (isInt(num)) num = num.toFixed(maxDisplayDigits);
+    return num; 
 }
+
+function roundResult(number) {
+    return Math.round(number * 1000000) / 1000000;
+  }
 
 function operate(operator, a, b){ // operator, a, b are strings
     //operator = operator.trim();
+    a = parseInt(a);
+    b = parseInt(b);
+    let result;
     if (operator === "+") {
         return add(a,b);
     } else if (operator === "-"){
-        return subtract(a,b);
+        result = subtract(a,b);
     } else if (operator === "*"){
-        return multiply(a,b);
+        result = multiply(a,b);
     } else if (operator === "/"){
-        return divide(a,b);
+        result = divide(a,b);
     } else{
-        return "INVALID INPUT";
+        result = "INVALID INPUT";
     }
+    return roundResult(result);
 }
 
 function restartCalculator(){
@@ -59,24 +65,29 @@ function restartCalculator(){
     a = "";
     b = "";
     op = "";
-    
-    
 }
+
+function isInt(n) {
+    n = parseInt(n);
+    return n % 1 === 0;
+ }
 
 
 screen.textContent = displayValue;
 
-
 // Add actions to number buttons
 numberButtons.forEach( (numberButton) => {
     numberButton.addEventListener('click', function(e){
+        
+        if ((screen.textContent.length >= maxDisplayDigits) && (op === "")) return;
 
-        if (op === ""){
+        else if (op === ""){
             a += e.target.textContent;
             screen.textContent = a;
         } else {
             b += e.target.textContent;
             screen.textContent = b;
+            
         }
     });
 });

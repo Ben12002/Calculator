@@ -29,18 +29,23 @@ button {
     background-color: rgb(114, 111, 111);
     padding: 15px;
     border-radius: 8px;
+    box-shadow: 3px 3px;
+    width: 300px;
 }
 
 .screen {
     border: 1px solid rgb(0, 0, 0);
     border-radius: 8px;
-    height: 70px;
+    /* height: 70px; */
     font-size: 50px;
     line-height: 70px;
     text-align: right;
     padding-right: 10px;
     background-color: rgb(112, 139, 119);
     font-family: 'Azeret Mono', monospace;
+    word-wrap: break-word;
+    word-break: break-all;
+    width: 1fr;
     
 }
 
