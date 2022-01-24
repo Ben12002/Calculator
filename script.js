@@ -131,7 +131,7 @@ document.querySelector(".equals-button").addEventListener('click', function(e){
     } else if (op === "/"){
         opclass = "divide-button";
     }
-    op = "";
+    op = ""; 
     
 });
 
